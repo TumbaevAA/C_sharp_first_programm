@@ -1,0 +1,7 @@
+C:\Users\Алексей\source\repos\prog_lab6\bin\Debug\prog_lab6.exe.config
+C:\Users\Алексей\source\repos\prog_lab6\bin\Debug\prog_lab6.exe
+C:\Users\Алексей\source\repos\prog_lab6\bin\Debug\prog_lab6.pdb
+C:\Users\Алексей\source\repos\prog_lab6\obj\Debug\prog_lab6.csproj.AssemblyReference.cache
+C:\Users\Алексей\source\repos\prog_lab6\obj\Debug\prog_lab6.csproj.CoreCompileInputs.cache
+C:\Users\Алексей\source\repos\prog_lab6\obj\Debug\prog_lab6.exe
+C:\Users\Алексей\source\repos\prog_lab6\obj\Debug\prog_lab6.pdb
