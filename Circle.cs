@@ -8,21 +8,13 @@ namespace prog_lab6
 {
     class Circle
     {
-        Point center;
-        double radius;
+        private Point center;
+        public double radius;
+
+        public Point Center { get => center;}
 
         public Circle()
         {
-        }
-
-        public Point getCenter()
-        {
-            return center;
-        }
-
-        public double getRadius()
-        {
-            return radius;
         }
 
         public bool init(Point center, double radius)
@@ -68,20 +60,14 @@ namespace prog_lab6
             Console.WriteLine("Center: ");
             this.center.output();
 
-            Console.WriteLine("Radius = {0}, circumference = {1}, area = {2}", this.radius, this.circumference(), this.area());
+            Console.WriteLine("Radius = {0}, circumference = {1}, area = {2}", this.radius, this.circumference, this.area);
 
             Console.WriteLine("----------------------------------------------");
 
         }
 
-        public double area()
-        {
-            return Math.PI * this.radius * this.radius;
-        }
+        public double area => Math.PI * this.radius * this.radius;
 
-        public double circumference()
-        {
-            return 2 * Math.PI * this.radius;
-        }
+        public double circumference => 2 * Math.PI * this.radius;
     }
 }

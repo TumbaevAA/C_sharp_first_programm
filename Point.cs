@@ -11,6 +11,9 @@ namespace prog_lab6
         private double x;
         private double y;
 
+        public double X { get => x; }
+        public double Y { get => y; }
+
         public Point()
         {
         }
@@ -19,16 +22,6 @@ namespace prog_lab6
         {
             this.x = x;
             this.y = y;
-        }
-
-        public double getX()
-        {
-            return x;
-        }
-
-        public double getY()
-        {
-            return x;
         }
 
         public bool input()

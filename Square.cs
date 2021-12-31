@@ -13,26 +13,15 @@ namespace prog_lab6
         private Point thirdPoint;
         private Point fourthPoint;
 
+        public Point FirstPoint { get => firstPoint; }
+        public Point SecondPoint { get => secondPoint; }
+        public Point ThirdPoint { get => thirdPoint; }
+        public Point FourthPoint { get => fourthPoint; }
+
         public Square()
         {
         }
 
-        private Point getFirstPoint()
-        {
-            return firstPoint;
-        }
-        private Point getSecondPoint()
-        {
-            return secondPoint;
-        }
-        private Point getThirdPoint()
-        {
-            return thirdPoint;
-        }
-        private Point getFourthPoint()
-        {
-            return fourthPoint;
-        }
         public bool init(Point first, Point second, Point third, Point fourth)
         {
             if (first == null || second == null || third == null || fourth == null) return false;
@@ -90,25 +79,16 @@ namespace prog_lab6
             Console.WriteLine("fourth: ");
             this.fourthPoint.output();
 
-            Console.WriteLine("Line length = {0}, perimeter = {1}, area = {2}", this.lineLength(), this.perimeter(), this.area());
+            Console.WriteLine("Line length = {0}, perimeter = {1}, area = {2}", this.lineLength, this.perimeter, this.area);
 
             Console.WriteLine("----------------------------------------------");
 
         }
 
-        public double lineLength()
-        {
-            return this.firstPoint.distance(secondPoint);
-        }
+        public double lineLength => this.firstPoint.distance(secondPoint);
 
-        public double perimeter()
-        {
-            return 4 * this.lineLength();
-        }
+        public double perimeter => 4 * this.lineLength;
 
-        public double area()
-        {
-            return this.lineLength() * this.lineLength();
-        }
+        public double area => this.lineLength * this.lineLength;
     }
 }

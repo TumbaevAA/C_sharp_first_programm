@@ -12,23 +12,12 @@ namespace prog_lab6
         private Point secondPoint;
         private Point thirdPoint;
 
+        public Point FirstPoint { get => firstPoint; }
+        public Point SecondPoint { get => secondPoint; }
+        public Point ThirdPoint { get => thirdPoint; }
+
         public Triangle()
         {
-        }
-
-        public Point getFirstPoint()
-        {
-            return firstPoint;
-        }
-
-        public Point getSecondPoint()
-        {
-            return secondPoint;
-        }
-
-        public Point getThirdPoint()
-        {
-            return thirdPoint;
         }
 
         public bool init(Point first, Point second, Point third)
@@ -87,7 +76,7 @@ namespace prog_lab6
             Console.WriteLine("second = {0}", this.lineLength(2));
             Console.WriteLine("third = {0}", this.lineLength(3));
 
-            Console.WriteLine("Perimeter = {0}, area = {1}", this.perimeter(), this.area());
+            Console.WriteLine("Perimeter = {0}, area = {1}", this.perimeter, this.area);
 
             Console.WriteLine("----------------------------------------------");
 
@@ -112,23 +101,27 @@ namespace prog_lab6
             }
         }
 
-        public double perimeter()
+        public double perimeter
         {
-            double perimeter = 0;
-            for (int i = 1; i < 4; i++)
+            get
             {
-                perimeter += this.lineLength(i);
+                double perimeter = 0;
+                for (int i = 1; i < 4; i++)
+                {
+                    perimeter += this.lineLength(i);
+                }
+
+                return perimeter;
             }
-
-            return perimeter;
         }
 
-        public double area()
+        public double area
         {
-            double semiPerimeter = this.perimeter() / 2;
-            return Math.Sqrt(semiPerimeter * (semiPerimeter - this.lineLength(1)) * (semiPerimeter - this.lineLength(2) * (semiPerimeter - this.lineLength(3))));
+            get
+            {
+                double semiPerimeter = this.perimeter / 2;
+                return Math.Sqrt(semiPerimeter * (semiPerimeter - this.lineLength(1)) * (semiPerimeter - this.lineLength(2) * (semiPerimeter - this.lineLength(3))));
+            }
         }
-
-
     }
 }

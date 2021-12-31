@@ -11,19 +11,17 @@ namespace prog_lab6
         private Point startPoint;
         private Point endPoint;
 
+        public Point StartPoint { get => startPoint; }
+        public Point EndPoint { get => endPoint; }
+
+        
+
+
+
         public Line()
         {
         }
 
-        public Point getStartPoint()
-        {
-            return startPoint;
-        }
-
-        public Point getEndPoint()
-        {
-            return endPoint;
-        }
         public bool init(Point start, Point end)
         {
             if (start == null || end == null) return false;
@@ -60,20 +58,17 @@ namespace prog_lab6
             Console.WriteLine("End of the line: ");
             this.endPoint.output();
 
-            Console.WriteLine("Lenght of the line: {0}", this.length());
+            Console.WriteLine("Lenght of the line: {0}", this.length);
         }
 
-        public double length()
-        {
-            return this.startPoint.distance(this.endPoint);
-        }
+        public double length => this.startPoint.distance(this.endPoint);
 
         public bool isPointOnLine(Point point)
         {
             if (point == null) return false;
 
             if (this.startPoint.distance(point) + 
-                this.endPoint.distance(point) == this.length()) 
+                this.endPoint.distance(point) == this.length) 
                 return true;
 
             return false;
