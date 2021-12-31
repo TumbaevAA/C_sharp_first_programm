@@ -10,9 +10,19 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
+            Point[] pointArr = new Point[5];
+
+            Console.WriteLine("Point array:");
+            for (int i = 0; i<pointArr.Length; i++)
+            {
+                pointArr[i] = new Point(i,i + 1);
+                Console.WriteLine("{0} elemnt: ", i);
+                pointArr[i].output();
+            }
+            
 
             //Тест Point
-            Console.WriteLine("Point test\nEnter the coordinates of the first point");
+            Console.WriteLine("\n\n\nPoint test\nEnter the coordinates of the first point");
             Point p = new Point(), p1 = new Point();
             p.input();
             p.output();
