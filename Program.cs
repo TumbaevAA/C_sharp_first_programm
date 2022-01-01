@@ -10,16 +10,19 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
+            //Работа с массивом
             Point[] pointArr = new Point[5];
 
             Console.WriteLine("Point array:");
-            for (int i = 0; i<pointArr.Length; i++)
+            for (int i = 0; i < pointArr.Length; i++)
             {
-                pointArr[i] = new Point(i,i + 1);
+                pointArr[i] = new Point(i, i + 1);
                 Console.WriteLine("{0} elemnt: ", i);
                 pointArr[i].output();
             }
 
+
+            //Перегрузка
             Console.WriteLine("\n\n\n++ overload for Point");
             Point point = new Point(0, 0);
             point.output();
@@ -33,6 +36,38 @@ namespace prog_lab6
             point = point1 + point2;
             point.output();
 
+
+            //Конкатенация строк
+            Console.WriteLine("\n\n\nString processing ");
+            string s1 = "hello", s2 = "world";
+            string s3 = s1 + " " + s2;
+            Console.WriteLine(s3);
+
+            //Сравнение строк
+            if (String.Compare(s1, s2) < 0)
+            {
+                Console.WriteLine(s1 + " alphabetically higher " + s2);
+            }
+
+
+            //Разделение строк
+            string[] words = s3.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (string i in words)
+            {
+                Console.WriteLine(i);
+            }
+
+
+            //Вставка строк
+            string subString = " beautiful";
+
+            s3 = s3.Insert(5, subString);
+            Console.WriteLine(s3);
+
+            //Смена регистра
+            Console.WriteLine(s3.ToUpper());
+            Console.WriteLine(s3.ToLower());
 
 
 
