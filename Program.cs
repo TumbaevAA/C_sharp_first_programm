@@ -19,7 +19,22 @@ namespace prog_lab6
                 Console.WriteLine("{0} elemnt: ", i);
                 pointArr[i].output();
             }
-            
+
+            Console.WriteLine("\n\n\n++ overload for Point");
+            Point point = new Point(0, 0);
+            point.output();
+            point++;
+            point.output();
+
+            Console.WriteLine("\n\n\n+ overload for Point");
+            Point point1 = new Point(7, 7), point2 = new Point(4, 4);
+            point1.output();
+            point2.output();
+            point = point1 + point2;
+            point.output();
+
+
+
 
             //Тест Point
             Console.WriteLine("\n\n\nPoint test\nEnter the coordinates of the first point");

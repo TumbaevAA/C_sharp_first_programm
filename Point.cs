@@ -27,7 +27,7 @@ namespace prog_lab6
         public bool input()
         {
             try
-            { 
+            {
                 double x = Convert.ToDouble(Console.ReadLine());
                 double y = Convert.ToDouble(Console.ReadLine());
 
@@ -38,7 +38,7 @@ namespace prog_lab6
             catch (FormatException)
             {
                 return false;
-            }   
+            }
         }
         public void output()
         {
@@ -46,10 +46,28 @@ namespace prog_lab6
         }
         public double distance(Point end)
         {
-            if (end == null) return - 1;
+            if (end == null) return -1;
 
             double d1 = end.x - this.x, d2 = end.y - this.y;
             return Math.Sqrt(d1 * d1 + d2 * d2);
         }
+
+        public static Point operator ++(Point p)
+        {
+            p.x++;
+            p.y++;
+            return p;
+        }
+
+        public static Point operator +(Point p1, Point p2)
+        {
+            Point p = new Point();
+
+            p.x = p1.x + p2.y;
+            p.y = p1.y + p2.y;
+
+            return p;
+        }
+
     }
 }
