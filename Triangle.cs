@@ -16,6 +16,29 @@ namespace prog_lab6
         public Point SecondPoint { get => secondPoint; }
         public Point ThirdPoint { get => thirdPoint; }
 
+        public double perimeter
+        {
+            get
+            {
+                double perimeter = 0;
+                for (int i = 1; i < 4; i++)
+                {
+                    perimeter += this.lineLength(i);
+                }
+
+                return perimeter;
+            }
+        }
+
+        public double area
+        {
+            get
+            {
+                double semiPerimeter = this.perimeter / 2;
+                return Math.Sqrt(semiPerimeter * (semiPerimeter - this.lineLength(1)) * (semiPerimeter - this.lineLength(2) * (semiPerimeter - this.lineLength(3))));
+            }
+        }
+
         public Triangle()
         {
         }
@@ -98,29 +121,6 @@ namespace prog_lab6
                     break;
                 default:
                     return -1;
-            }
-        }
-
-        public double perimeter
-        {
-            get
-            {
-                double perimeter = 0;
-                for (int i = 1; i < 4; i++)
-                {
-                    perimeter += this.lineLength(i);
-                }
-
-                return perimeter;
-            }
-        }
-
-        public double area
-        {
-            get
-            {
-                double semiPerimeter = this.perimeter / 2;
-                return Math.Sqrt(semiPerimeter * (semiPerimeter - this.lineLength(1)) * (semiPerimeter - this.lineLength(2) * (semiPerimeter - this.lineLength(3))));
             }
         }
     }

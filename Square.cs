@@ -18,6 +18,12 @@ namespace prog_lab6
         public Point ThirdPoint { get => thirdPoint; }
         public Point FourthPoint { get => fourthPoint; }
 
+        public double lineLength => this.firstPoint.distance(secondPoint);
+
+        public double perimeter => 4 * this.lineLength;
+
+        public double area => this.lineLength * this.lineLength;
+
         public Square()
         {
         }
@@ -84,11 +90,5 @@ namespace prog_lab6
             Console.WriteLine("----------------------------------------------");
 
         }
-
-        public double lineLength => this.firstPoint.distance(secondPoint);
-
-        public double perimeter => 4 * this.lineLength;
-
-        public double area => this.lineLength * this.lineLength;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prog_lab6
 {
-    class Line
+    struct Line
     {
         private Point startPoint;
         private Point endPoint;
@@ -14,13 +14,7 @@ namespace prog_lab6
         public Point StartPoint { get => startPoint; }
         public Point EndPoint { get => endPoint; }
 
-        
-
-
-
-        public Line()
-        {
-        }
+        public double length => this.startPoint.distance(this.endPoint); 
 
         public bool init(Point start, Point end)
         {
@@ -60,8 +54,6 @@ namespace prog_lab6
 
             Console.WriteLine("Lenght of the line: {0}", this.length);
         }
-
-        public double length => this.startPoint.distance(this.endPoint);
 
         public bool isPointOnLine(Point point)
         {

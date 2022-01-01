@@ -10,14 +10,21 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
-            Point[] pointArr = new Point[5];
+            Point[] pointFirstArr = new Point[5];
+            Point[] pointSecondArr = new Point[5];
 
-            Console.WriteLine("Point array:");
-            for (int i = 0; i<pointArr.Length; i++)
+            Line[] lineStructArr = new Line[5];
+
+            Console.WriteLine("Line array:");
+            for (int i = 0; i < lineStructArr.Length; i++)
             {
-                pointArr[i] = new Point(i,i + 1);
+                pointFirstArr[i] = new Point(i, i + 1);
+                pointSecondArr[i] = new Point(i, i - 1);
+
+                lineStructArr[i].init(pointFirstArr[i], pointSecondArr[i]);
+                
                 Console.WriteLine("{0} elemnt: ", i);
-                pointArr[i].output();
+                lineStructArr[i].output();
             }
             
 

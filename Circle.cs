@@ -13,6 +13,10 @@ namespace prog_lab6
 
         public Point Center { get => center;}
 
+        public double area => Math.PI * this.radius * this.radius;
+
+        public double circumference => 2 * Math.PI * this.radius;
+
         public Circle()
         {
         }
@@ -66,8 +70,5 @@ namespace prog_lab6
 
         }
 
-        public double area => Math.PI * this.radius * this.radius;
-
-        public double circumference => 2 * Math.PI * this.radius;
     }
 }
