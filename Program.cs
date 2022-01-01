@@ -6,8 +6,25 @@ using System.Threading.Tasks;
 
 namespace prog_lab6
 {
+    
     class Program
     {
+
+        public static void LineInitRef(ref Line line)
+        {
+            Console.WriteLine("\n\n\nLine init via ref");
+            Point start = new Point(0, 0), end = new Point(1, 1);
+            line.init(start, end);
+        }
+
+        public static void LineInitOut(out Line line)
+        {
+            Console.WriteLine("\n\n\nLine init via out");
+            line = new Line();
+            Point start = new Point(2, 2), end = new Point(3, 3);
+            line.init(start, end);
+        }
+
         static void Main(string[] args)
         {
             Point[] pointFirstArr = new Point[5];
@@ -26,7 +43,18 @@ namespace prog_lab6
                 Console.WriteLine("{0} elemnt: ", i);
                 lineStructArr[i].output();
             }
-            
+
+
+            Line lineRef = new Line();
+            LineInitRef(ref lineRef);
+            lineRef.output();
+
+            Line lineOut;
+            LineInitOut(out lineOut);
+            lineOut.output();
+
+
+
 
             //Тест Point
             Console.WriteLine("\n\n\nPoint test\nEnter the coordinates of the first point");
