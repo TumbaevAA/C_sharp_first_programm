@@ -69,5 +69,11 @@ namespace prog_lab6
             return p;
         }
 
+        public static double distanceToOrigin(Point p)
+        {
+            Point origin = new Point(0, 0);
+            return origin.distance(p);
+        }
+
     }
 }
