@@ -10,16 +10,23 @@ namespace prog_lab6
     {
         private double x;
         private double y;
+        private int id;
+        private static int count = 0;
 
         public double X { get => x; }
         public double Y { get => y; }
+        public int Id { get => id; }
 
         public Point()
         {
+            count++;
+            id = count;
         }
 
         public Point(float x, float y)
         {
+            count++;
+            id = count;
             this.x = x;
             this.y = y;
         }
@@ -42,7 +49,7 @@ namespace prog_lab6
         }
         public void output()
         {
-            Console.WriteLine("x = {0}, y = {1}", x, y);
+            Console.WriteLine("x = {0}, y = {1}, id = {2}", x, y, id);
         }
         public double distance(Point end)
         {
