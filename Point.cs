@@ -16,6 +16,14 @@ namespace prog_lab6
         public double X { get => x; }
         public double Y { get => y; }
         public int Id { get => id; }
+        
+        /*Id нельзя назначать через параметр
+        Конструктор тольок демонстрирует работу
+        конструктора с параметром*/
+        public Point(int id)
+        {
+            this.id = id;
+        }
 
         public Point()
         {

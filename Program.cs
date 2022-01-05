@@ -10,20 +10,17 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Determining the distance to the origin\nEnter coordinates of the point");
-            Point p = new Point();
-            p.input();
+            Console.WriteLine("Point constructors test");
+            Point p = new Point(3, 4), p1 = new Point(1234), p2 = new Point();
             p.output();
-            Console.WriteLine("Distance to origin = " + Point.distanceToOrigin(p));
-
-
-            Console.WriteLine("Id generartion with static field");
-            Point p1 = new Point(1, 1), p2 = new Point(2, 2), p3 = new Point(3, 3);
+            Console.WriteLine("Enter coordinates of the second point");
+            p1.input();
             p1.output();
+            Console.WriteLine("Enter coordinates of the third point");
+            p2.input();
             p2.output();
-            p3.output();
 
-            
+
             Console.ReadLine();  
         }
     }
