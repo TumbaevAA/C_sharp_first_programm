@@ -10,6 +10,16 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("\n\n\nSquare constructors test");
+            Point pointForSquare = new Point(0, 0), pointForSquare1 = new Point(1, 0),
+                pointForSquare2 = new Point(1, 1), pointForSquare3 = new Point(0, 1);
+            Square s = new Square(pointForSquare, pointForSquare1, pointForSquare2, pointForSquare3),
+                s1 = new Square();
+            s.output();
+            Console.WriteLine("Enter first, second, third and fourth points of the triangle");
+            s1.input();
+            s1.output();
+
             Console.WriteLine("\n\n\nTriangle constructors test");
             Point pointForTriangle = new Point(0, 0), pointForTriangle1 = new Point(1, 0), 
                 pointForTriangle2 = new Point(0, 1);
@@ -19,7 +29,6 @@ namespace prog_lab6
             Console.WriteLine("Enter first, second and third points of the triangle");
             t1.input();
             t1.output();
-
 
 
             Console.WriteLine("\n\n\nPoint constructors test");
