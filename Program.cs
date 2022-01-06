@@ -10,7 +10,19 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Point constructors test");
+            Console.WriteLine("\n\n\nTriangle constructors test");
+            Point pointForTriangle = new Point(0, 0), pointForTriangle1 = new Point(1, 0), 
+                pointForTriangle2 = new Point(0, 1);
+            Triangle t = new Triangle(pointForTriangle, pointForTriangle1, pointForTriangle2),
+                t1 = new Triangle();
+            t.output();
+            Console.WriteLine("Enter first, second and third points of the triangle");
+            t1.input();
+            t1.output();
+
+
+
+            Console.WriteLine("\n\n\nPoint constructors test");
             Point p = new Point(3, 4), p1 = new Point(1234), p2 = new Point();
             p.output();
             Console.WriteLine("Enter coordinates of the second point");
@@ -27,7 +39,7 @@ namespace prog_lab6
             Console.WriteLine("Enter start and end points of the line");
             l1.input();
             l1.output();
-            Console.ReadLine();  
+            Console.ReadLine();
         }
     }
 }

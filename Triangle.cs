@@ -20,24 +20,18 @@ namespace prog_lab6
         {
         }
 
-        public bool init(Point first, Point second, Point third)
+        public Triangle (Point first, Point second, Point third)
         {
-            if (first == null || second == null || third == null) return false;
-
             double d1 = first.distance(second), d2 = second.distance(third), d3 = third.distance(first);
 
-            if (d1 == 0 || d2 == 0 || d3 == 0 ||                      //Если какие-то точки совпадают, возвращаем false
-                d1 == d2 + d3 || d2 == d1 + d3 || d3 == d1 + d2)      //Если точка лежит на отрезке между двумя другими - false
-            {
-                return false;
-            }
+            if (d1 == 0 || d2 == 0 || d3 == 0 ||                   //Если какие-то точки совпадают - не иницилизируем
+                d1 == d2 + d3 || d2 == d1 + d3 || d3 == d1 + d2)   //Если точка лежит на отрезке между двумя другими - не инициализируем
+            {}
             else
             {
                 this.firstPoint = first;
                 this.secondPoint = second;
                 this.thirdPoint = third;
-
-                return true;
             }
         }
 
@@ -47,7 +41,11 @@ namespace prog_lab6
 
             if (first.input() && second.input() && third.input())
             {
-                return this.init(first, second, third);
+                this.firstPoint = first;
+                this.secondPoint = second;
+                this.thirdPoint = third;
+
+                return true;
             }
             else
             {
@@ -120,7 +118,7 @@ namespace prog_lab6
             get
             {
                 double semiPerimeter = this.perimeter / 2;
-                return Math.Sqrt(semiPerimeter * (semiPerimeter - this.lineLength(1)) * (semiPerimeter - this.lineLength(2) * (semiPerimeter - this.lineLength(3))));
+                return Math.Sqrt(semiPerimeter * (semiPerimeter - this.lineLength(1)) * (semiPerimeter - this.lineLength(2)) * (semiPerimeter - this.lineLength(3)));
             }
         }
     }
