@@ -10,6 +10,15 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Array init test");
+            Point[] pointArr = { new Point(0348), new Point(999), new Point(0) };
+            foreach(Point point in pointArr)
+            {
+                Console.WriteLine("\nInput Coordinates of the point");
+                point.input();
+                point.output();
+            }
+
             Console.WriteLine("\n\n\nCircle constructors test");
             Point center = new Point(0, 0);
             Circle c = new Circle(center, 6), c1 = new Circle();
