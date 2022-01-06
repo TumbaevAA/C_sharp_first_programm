@@ -22,17 +22,13 @@ namespace prog_lab6
         {
         }
 
-        public bool init(Point start, Point end)
+        public Line(Point start, Point end)
         {
-            if (start == null || end == null) return false;
-            else
-            {
-                this.startPoint = start;
-                this.endPoint = end;
-
-                return true;
-            }               
+            this.startPoint = start;
+            this.endPoint = end;
         }
+
+
 
         public bool input()
         {
@@ -40,7 +36,9 @@ namespace prog_lab6
 
             if (start.input() && end.input())
             {
-                return this.init(start, end);    
+                this.startPoint = start;
+                this.endPoint = end;
+                return true;
             }
             else
             {

@@ -21,6 +21,12 @@ namespace prog_lab6
             p2.output();
 
 
+            Console.WriteLine("\n\n\nLine constructors test");
+            Line l = new Line(p, p1), l1 = new Line();
+            l.output();
+            Console.WriteLine("Enter start and end points of the line");
+            l1.input();
+            l1.output();
             Console.ReadLine();  
         }
     }
