@@ -10,6 +10,15 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("\n\n\nCircle constructors test");
+            Point center = new Point(0, 0);
+            Circle c = new Circle(center, 6), c1 = new Circle();
+            c.output();
+            Console.WriteLine("Enter radius and center of the circle");
+            c1.input();
+            c1.output();
+                
+
             Console.WriteLine("\n\n\nSquare constructors test");
             Point pointForSquare = new Point(0, 0), pointForSquare1 = new Point(1, 0),
                 pointForSquare2 = new Point(1, 1), pointForSquare3 = new Point(0, 1);

@@ -17,14 +17,10 @@ namespace prog_lab6
         {
         }
 
-        public bool init(Point center, double radius)
+       public Circle(Point center, double radius)
         {
-            if(radius < 0 || center == null) return false;
-
-            this.radius = radius;
             this.center = center;
-
-            return true;
+            this.radius = radius;
         }
 
         public bool input()
@@ -38,7 +34,9 @@ namespace prog_lab6
 
                 if (center.input())
                 {
-                    return this.init(center, radius);
+                    this.center = center;
+                    this.radius = radius;
+                    return true;
                 }
                 else
                 {
