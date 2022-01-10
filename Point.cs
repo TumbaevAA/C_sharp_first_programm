@@ -52,6 +52,7 @@ namespace prog_lab6
             }
             catch (FormatException)
             {
+                Console.WriteLine("Invalid input");
                 return false;
             }
         }
@@ -61,7 +62,7 @@ namespace prog_lab6
         }
         public double distance(Point end)
         {
-            if (end == null) return -1;
+            if (end == null) throw new ArgumentNullException();
 
             double d1 = end.x - this.x, d2 = end.y - this.y;
             return Math.Sqrt(d1 * d1 + d2 * d2);
@@ -86,6 +87,8 @@ namespace prog_lab6
 
         public static double distanceToOrigin(Point p)
         {
+            if (p == null) throw new ArgumentNullException();
+
             Point origin = new Point(0, 0);
             return origin.distance(p);
         }
