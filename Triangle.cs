@@ -22,11 +22,12 @@ namespace prog_lab6
 
         public Triangle (Point first, Point second, Point third)
         {
+            if(first == null || second == null || third == null) throw new ArgumentNullException();
             double d1 = first.distance(second), d2 = second.distance(third), d3 = third.distance(first);
 
             if (d1 == 0 || d2 == 0 || d3 == 0 ||                   //Если какие-то точки совпадают - не иницилизируем
                 d1 == d2 + d3 || d2 == d1 + d3 || d3 == d1 + d2)   //Если точка лежит на отрезке между двумя другими - не инициализируем
-            {}
+            { throw new Exception(); }
             else
             {
                 this.firstPoint = first;
