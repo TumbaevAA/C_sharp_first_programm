@@ -14,20 +14,26 @@ namespace prog_lab6
         public Point StartPoint { get => startPoint; }
         public Point EndPoint { get => endPoint; }
 
-        
-
-
-
         public Line()
         {
         }
 
         public Line(Point start, Point end)
         {
+            if (start == null || end == null) throw new ArgumentNullException();
             this.startPoint = start;
             this.endPoint = end;
         }
+        public bool isPointOnLine(Point point)
+        {
+            if (point == null) throw new ArgumentNullException();
 
+            if (this.startPoint.distance(point) +
+                this.endPoint.distance(point) == this.length)
+                return true;
+
+            return false;
+        }
 
 
         public bool input()
@@ -60,16 +66,5 @@ namespace prog_lab6
         }
 
         public double length => this.startPoint.distance(this.endPoint);
-
-        public bool isPointOnLine(Point point)
-        {
-            if (point == null) return false;
-
-            if (this.startPoint.distance(point) + 
-                this.endPoint.distance(point) == this.length) 
-                return true;
-
-            return false;
-        }
     }
 }
