@@ -10,6 +10,19 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
+            //Тест Circle
+            Circle c;
+            try
+            {
+                c = new Circle(null, 3);
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("Catching ArgumentNullException when using Circle constructor");
+            }
+            c = new Circle();
+            c.input();
+
             //Тест Square
             Point pForSquare = new Point(0, 0), pForSquare1 = new Point(4, 0), pForSquare2 = new Point(4, 4),
                 pForSquare3 = new Point(0, 4);

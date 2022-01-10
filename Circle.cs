@@ -19,6 +19,7 @@ namespace prog_lab6
 
        public Circle(Point center, double radius)
         {
+            if (center == null) throw new ArgumentNullException();
             this.center = center;
             this.radius = radius;
         }
@@ -46,9 +47,10 @@ namespace prog_lab6
             }
             catch (FormatException)
             {
+
+                Console.WriteLine("Invalid input");
                 return false;
             }
-
         }
 
         public void output()
