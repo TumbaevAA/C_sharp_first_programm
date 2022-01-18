@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prog_lab6
 {
-    class Circle
+    class Circle : IOInterface
     {
         protected Point center;
         protected double radius;

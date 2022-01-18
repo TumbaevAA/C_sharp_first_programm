@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prog_lab6
 {
-    class Triangle
+    class Triangle : IOInterface
     {
         protected Point firstPoint;
         protected Point secondPoint;
