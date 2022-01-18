@@ -53,7 +53,7 @@ namespace prog_lab6
             }
         }
 
-        public void output()
+        public virtual void output()
         {
             Console.WriteLine("Circle\n----------------------------------------------");
 

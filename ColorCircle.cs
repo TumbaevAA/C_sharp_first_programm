@@ -15,7 +15,7 @@ namespace prog_lab6
             this.color = color;
         }
 
-        public void output()
+        public override void output()
         {
             Console.WriteLine("Circle\n----------------------------------------------");
 
