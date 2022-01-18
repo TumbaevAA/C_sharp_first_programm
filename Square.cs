@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prog_lab6
 {
-    class Square
+    class Square : GeometricFigure
     {
         private Point firstPoint;
         private Point secondPoint;
@@ -22,7 +22,8 @@ namespace prog_lab6
         {
         }
 
-        public Square(Point first, Point second, Point third, Point fourth)
+        public Square(Point first, Point second, Point third, Point fourth, string description)
+            : base(description)
         {
             if (first == null || second == null || third == null || fourth == null) throw new ArgumentNullException();
 
@@ -41,8 +42,9 @@ namespace prog_lab6
                 this.fourthPoint = fourth;
             }
         }
+        public double lineLength => this.firstPoint.distance(secondPoint);
 
-        public bool input()
+        public override bool input()
         {
             Point first = new Point(), second = new Point(), third = new Point(), fourth = new Point();
 
@@ -65,7 +67,7 @@ namespace prog_lab6
             }
         }
 
-        public void output()
+        public override void output()
         {
             Console.WriteLine("Square\n----------------------------------------------");
 
@@ -79,16 +81,13 @@ namespace prog_lab6
             Console.WriteLine("fourth: ");
             this.fourthPoint.output();
 
-            Console.WriteLine("Line length = {0}, perimeter = {1}, area = {2}", this.lineLength, this.perimeter, this.area);
-
+            Console.WriteLine("Line length = {0}, perimeter = {1}, area = {2}", this.lineLength, this.perimeter(), this.area());
             Console.WriteLine("----------------------------------------------");
 
         }
 
-        public double lineLength => this.firstPoint.distance(secondPoint);
+        public override double perimeter() => 4 * this.lineLength;
 
-        public double perimeter => 4 * this.lineLength;
-
-        public double area => this.lineLength * this.lineLength;
+        public override double area() => this.lineLength * this.lineLength;
     }
 }

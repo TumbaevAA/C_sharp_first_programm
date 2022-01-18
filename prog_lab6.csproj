@@ -46,6 +46,7 @@
     <Compile Include="Circle.cs" />
     <Compile Include="ColorCircle.cs" />
     <Compile Include="EquilateralTriangle.cs" />
+    <Compile Include="GeometricFigure .cs" />
     <Compile Include="IOInterface.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Point.cs" />

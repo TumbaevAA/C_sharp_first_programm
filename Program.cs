@@ -10,6 +10,12 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
+            Point point1 = new Point(0, 0), point2 = new Point(0, 1), point3 = new Point(1, 1), point4 = new Point(1, 0);
+
+            Square s = new Square(point1, point2, point3, point4, "new square");
+            s.output();
+            Console.WriteLine(s.getDescription() + "\n\n");
+            
             Point center = new Point(0, 0), p1 = new Point(0.5f, 0.86602540378f), p2 = new Point(1,0);
 
             EquilateralTriangle eT = new EquilateralTriangle(center, p1, p2);
