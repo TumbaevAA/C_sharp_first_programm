@@ -8,9 +8,9 @@ namespace prog_lab6
 {
     class Triangle
     {
-        private Point firstPoint;
-        private Point secondPoint;
-        private Point thirdPoint;
+        protected Point firstPoint;
+        protected Point secondPoint;
+        protected Point thirdPoint;
 
         public Point FirstPoint { get => firstPoint; }
         public Point SecondPoint { get => secondPoint; }

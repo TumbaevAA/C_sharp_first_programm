@@ -8,8 +8,8 @@ namespace prog_lab6
 {
     class Circle
     {
-        private Point center;
-        public double radius;
+        protected Point center;
+        protected double radius;
 
         public Point Center { get => center;}
 

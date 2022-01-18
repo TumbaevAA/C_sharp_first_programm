@@ -10,26 +10,14 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
-            Point[,] twoDimensionalPointArr = new Point[2, 3];
-            for (int i = 0; i < twoDimensionalPointArr.GetLength(0); i++)
-                for (int j = 0; j < twoDimensionalPointArr.GetLength(1); j++)
-                {
-                    twoDimensionalPointArr[i, j] = new Point();
-                    Console.WriteLine("Enter coordinates of the {0} point in the {1} row", j, i);
-                    twoDimensionalPointArr[i, j].input();
-                    twoDimensionalPointArr[i, j].output();
-                }
+            Point center = new Point(0, 0), p1 = new Point(0.5f, 0.86602540378f), p2 = new Point(1,0);
 
+            EquilateralTriangle eT = new EquilateralTriangle(center, p1, p2);
 
-            Point[] pointArr = new Point[3];
+            eT.output();
 
-            for (int i = 0; i < pointArr.Length; i++) {
-   
-                pointArr[i] = new Point();
-                Console.WriteLine("Enter coordinates of the {0} point", i);
-                pointArr[i].input();
-                pointArr[i].output();
-            }
+            ColorCircle colorCircle = new ColorCircle(center, 4, "white");
+            colorCircle.output();
 
             Console.ReadLine();
         }
