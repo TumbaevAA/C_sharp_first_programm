@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prog_lab6
 {
-    class Circle : IOInterface
+    class Circle : IOInterface, ICloneable
     {
         protected Point center;
         protected double radius;
@@ -66,8 +66,19 @@ namespace prog_lab6
 
         }
 
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+
         public double area => Math.PI * this.radius * this.radius;
 
         public double circumference => 2 * Math.PI * this.radius;
+
+        public void setCenter(float x, float y)
+        {
+            this.center.X = x;
+            this.center.Y = y;
+        }
     }
 }

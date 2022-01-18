@@ -10,6 +10,16 @@ namespace prog_lab6
     {
         static void Main(string[] args)
         {
+            Point center1 = new Point(0, 0);
+            Circle c = new Circle(center1, 3);
+
+            Circle cClone = (Circle)c.Clone();
+            c.output();
+
+            cClone.output();
+            cClone.setCenter(1, 1);
+            c.output();
+
             Point point1 = new Point(0, 0), point2 = new Point(0, 1), point3 = new Point(1, 1), point4 = new Point(1, 0);
 
             Square s = new Square(point1, point2, point3, point4, "new square");

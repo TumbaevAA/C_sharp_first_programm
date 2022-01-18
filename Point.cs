@@ -13,8 +13,8 @@ namespace prog_lab6
         private int id;
         private static int count = 0;
 
-        public double X { get => x; }
-        public double Y { get => y; }
+        public double X { get => x; set => x = value; }
+        public double Y { get => y; set => y = value; }
         public int Id { get => id; }
         
         /*Id нельзя назначать через параметр
