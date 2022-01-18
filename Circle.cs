@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace prog_lab6
 {
+
+    [Serializable]
     class Circle : IOInterface, ICloneable
     {
         protected Point center;

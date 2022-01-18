@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,12 +15,28 @@ namespace prog_lab6
             Point center1 = new Point(0, 0);
             Circle c = new Circle(center1, 3);
 
-            Circle cClone = (Circle)c.Clone();
+            MemoryStream stream = new MemoryStream();
+
+            BinaryFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(stream, c);
+
+            stream.Seek(0, SeekOrigin.Begin);
+
+            Circle cClone1 = (Circle)formatter.Deserialize(stream);
+
+            cClone1.setCenter(5, 5);
+            cClone1.output();
             c.output();
 
+
+            Circle cClone = (Circle)c.Clone();
+            c.output();
+            
             cClone.output();
             cClone.setCenter(1, 1);
             c.output();
+
+
 
             Point point1 = new Point(0, 0), point2 = new Point(0, 1), point3 = new Point(1, 1), point4 = new Point(1, 0);
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace prog_lab6
 {
+    [Serializable]
     class Point
     {
         private double x;
